@@ -32,7 +32,7 @@
                 </div>
             </td>
             <td>{{ $p->name }}</td> {{--Print do Blade pro Id da loja--}}
-            <td>R$ {{ $p->price }}</td>
+            <td>R$ {{ number_format($p->price, 2, ',', '.') }}</td>
             <td>{{ $p->id }}</td> {{--Print do Blade pro Id da loja--}}
         </tr>
         @endforeach
