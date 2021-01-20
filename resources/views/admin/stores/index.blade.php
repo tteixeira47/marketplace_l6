@@ -19,15 +19,19 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('admin.stores.edit', ['store'=>$store->id]) }}" role="button">
+                        <a class="dropdown-item" href="{{ route('admin.stores.edit', ['store'=>$store->id]) }}"
+                            role="button">
                             <i class="fas fa-edit"></i>
                             <span>Editar</span>
                         </a>
-                        <a class="dropdown-item text-danger" href="{{ route('admin.stores.destroy', ['store'=>$store->id]) }}"
-                            role="button">
-                            <i class="fas fa-trash"></i>
-                            <span class="text-danger">Excluir</span>
-                        </a>
+                        <form action="{{ route('admin.stores.destroy', ['store'=>$store->id]) }}" method="POST">
+                            @csrf
+                            @method("DELETE")
+                            <button type="submit" class="dropdown-item text-danger">
+                                <i class="fas fa-trash"></i>
+                                <span class="text-danger">Excluir</span>
+                            </button>
+                        </form>
                     </div>
                 </div>
             </td>
