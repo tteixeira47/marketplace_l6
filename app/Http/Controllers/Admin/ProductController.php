@@ -65,7 +65,7 @@ class ProductController extends Controller
 
         flash('Produto atualizado com sucesso!')->success()->important();
 
-        return redirect()->route('products.index');
+         
     }
 
     public function destroy($product)
