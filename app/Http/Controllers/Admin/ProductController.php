@@ -70,6 +70,12 @@ class ProductController extends Controller
 
     public function destroy($product)
     {
-        return $product;
+        $product = $this->product->find($product);
+
+        $product->delete();
+
+        flash('Produto removido com sucesso!')->success()->important();
+
+        return redirect()->route('products.index');
     }
 }
