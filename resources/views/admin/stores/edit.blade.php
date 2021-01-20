@@ -4,6 +4,7 @@
 <h1>Editar Loja</h1>
 <form method="POST" action="{{ route('admin.stores.update', ['store'=>$store->id]) }}">
     @csrf
+    @method("PUT")
 
     <div class="form-group">
         <label>Nome Loja</label>
