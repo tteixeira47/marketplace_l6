@@ -19,11 +19,11 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('edit', ['store'=>$store->id]) }}" role="button">
+                        <a class="dropdown-item" href="{{ route('admin.stores.edit', ['store'=>$store->id]) }}" role="button">
                             <i class="fas fa-edit"></i>
                             <span>Editar</span>
                         </a>
-                        <a class="dropdown-item text-danger" href="{{ route('destroy', ['store'=>$store->id]) }}"
+                        <a class="dropdown-item text-danger" href="{{ route('admin.stores.destroy', ['store'=>$store->id]) }}"
                             role="button">
                             <i class="fas fa-trash"></i>
                             <span class="text-danger">Excluir</span>
@@ -40,6 +40,6 @@
 
 <ul class="pagination justify-content-end">{{ $stores->links() }}</ul>
 
-<a class="btn btn-primary" href="{{ route('create', ['store'=>$store->id]) }}" role="button">Criar Loja</a>
+<a class="btn btn-primary" href="{{ route('admin.stores.create', ['store'=>$store->id]) }}" role="button">Criar Loja</a>
 
 @endsection

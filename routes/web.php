@@ -17,9 +17,9 @@ Route::get('/', function () {
 
 /* Grupo de Rotas de Store*/
 
-Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'name' => 'admin.'], function () {
+Route::prefix('admin')->name('admin.')->namespace('Admin')->group(function () {
 
-    Route::group(['prefix' => 'stores', 'name' => 'stores.'], function () {
+    Route::prefix('stores')->name('stores.')->group(function () {
 
         Route::get('/', 'StoreController@index')->name('index');
         Route::get('/create', 'StoreController@create')->name('create');

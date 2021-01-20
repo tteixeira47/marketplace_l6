@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Editar Produto</h1>
-<form method="POST" action="{{ route('products.update', ['product'=>$product->id]) }}">
+<form method="POST" action="{{ route('admin.products.update', ['product'=>$product->id]) }}">
     @csrf
     @method("PUT")
 

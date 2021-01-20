@@ -40,7 +40,7 @@ class ProductController extends Controller
 
         flash('Produto criado com sucesso!')->success()->important();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function show($product)
@@ -65,7 +65,7 @@ class ProductController extends Controller
 
         flash('Produto atualizado com sucesso!')->success()->important();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 
     public function destroy($product)
@@ -76,6 +76,6 @@ class ProductController extends Controller
 
         flash('Produto removido com sucesso!')->success()->important();
 
-        return redirect()->route('products.index');
+        return redirect()->route('admin.products.index');
     }
 }

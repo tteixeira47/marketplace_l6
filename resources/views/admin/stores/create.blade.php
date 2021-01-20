@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Criar Loja</h1>
-<form method="POST" action="{{ route('store') }}">
+<form method="POST" action="{{ route('admin.stores.store') }}">
     @csrf
 
     <div class="form-group">

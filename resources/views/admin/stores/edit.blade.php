@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>Editar Loja</h1>
-<form method="POST" action="{{ route('update', ['store'=>$store->id]) }}">
+<form method="POST" action="{{ route('admin.stores.update', ['store'=>$store->id]) }}">
     @csrf
 
     <div class="form-group">

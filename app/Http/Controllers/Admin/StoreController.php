@@ -30,7 +30,7 @@ class StoreController extends Controller
 
         flash('Loja ('. $store->name.  ') criada com sucesso!')->success()->important();
         
-        return redirect()->route('index');
+        return redirect()->route('admin.stores.index');
     }
 
     public function edit($store)
@@ -50,7 +50,7 @@ class StoreController extends Controller
 
         flash('Loja ('. $store->name. ') atualizada com sucesso!')->success()->important();
         
-        return redirect()->route('index');
+        return redirect()->route('admin.stores.index');
     }
 
     public function destroy($store)
@@ -61,6 +61,6 @@ class StoreController extends Controller
 
         flash('Loja ('. $store->name.  ') removida com sucesso!')->success()->important();
 
-        return redirect()->route('index');
+        return redirect()->route('admin.stores.index');
     }
 }

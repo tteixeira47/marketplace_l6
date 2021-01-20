@@ -20,11 +20,11 @@
                         <i class="fas fa-ellipsis-v"></i>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="{{ route('products.edit', ['product'=>$p->id]) }}" role="button">
+                        <a class="dropdown-item" href="{{ route('admin.products.edit', ['product'=>$p->id]) }}" role="button">
                             <i class="fas fa-edit"></i>
                             <span>Editar</span>
                         </a>
-                        <form name="botaoRemover" action="{{ route('products.destroy', ['product'=>$p->id]) }}" method="POST">
+                        <form name="botaoRemover" action="{{ route('admin.products.destroy', ['product'=>$p->id]) }}" method="POST">
                             @csrf
                             @method("DELETE")
                             <button type="submit" class="dropdown-item text-danger">
@@ -46,6 +46,6 @@
 
 <ul class="pagination justify-content-end">{{ $products->links() }}</ul>
 
-<a class="btn btn-primary" href="{{ route('products.create') }}" role="button">Criar Produto</a>
+<a class="btn btn-primary" href="{{ route('admin.products.create') }}" role="button">Criar Produto</a>
 
 @endsection
