@@ -24,7 +24,7 @@ class StoreController extends Controller
     {
         $data = $request->all(); // Pega a requisição enviada pelo POST do form e salva em $data
 
-        $user = \App\User::find($data['user']); // Procura o usuário que está em data
+        $user = auth()->user();
 
         $store = $user->store()->create($data); // Executa um create store com os dados do form
 
