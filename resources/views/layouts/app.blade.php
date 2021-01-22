@@ -43,6 +43,9 @@
                 <div class="ml-auto">
                     <ul class="navbar-nav">
                         <li class="nav-item">
+                            <span class="nav-link disabled" href="#">Usuário logado: {{auth()->user()->name}}</span>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" aria-current="page" href="#"
                                 onclick="event.preventDefault(); document.querySelector('form.logout').submit();">Sair</a>
                             <form action="{{route('logout')}}" class="logout" method="post" style="display:none">
