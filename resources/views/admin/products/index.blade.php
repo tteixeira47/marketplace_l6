@@ -51,6 +51,4 @@
 
 <a class="btn btn-primary" href="{{ route('admin.products.create') }}" role="button">Criar Produto</a>
 
-<a class="btn btn-secondary" href="{{ route('admin.stores.index') }}" role="button">Lista de Lojas</a>
-
 @endsection
