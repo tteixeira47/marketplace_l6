@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home'); // Apontando para a rota home
 
 Route::group(['middleware' => 'auth'], function () {
     
@@ -40,4 +40,4 @@ Route::group(['middleware' => 'auth'], function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home'); --Não vamos usar o HomeController, ele será o raiz
