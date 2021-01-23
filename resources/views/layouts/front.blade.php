@@ -50,17 +50,16 @@
             <div class="my-2 my-lg-0">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
+                        <span class="nav-link disabled">Usuário logado: {{auth()->user()->name}}</span>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#"
-                            onclick="event.preventDefault();
-                                                                  document.querySelector('form.logout').submit(); ">Sair</a>
-
+                            onclick="event.preventDefault(); document.querySelector('form.logout').submit(); ">Sair</a>
                         <form action="{{route('logout')}}" class="logout" method="POST" style="display:none;">
                             @csrf
                         </form>
                     </li>
-                    <li class="nav-item">
-                        <span class="nav-link">{{auth()->user()->name}}</span>
-                    </li>
+
                 </ul>
             </div>
             @endauth
