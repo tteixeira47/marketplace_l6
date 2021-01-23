@@ -10,7 +10,6 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($stores as $store)
         <tr>
             <td>
                 <div class="dropdown">
@@ -38,11 +37,8 @@
             <td>{{ $store->name }}</td> {{--Print do Blade pro Id da loja--}}
             <td>{{ $store->id }}</td> {{--Print do Blade pro Id da loja--}}
         </tr>
-        @endforeach
     </tbody>
 </table>
-
-<ul class="pagination justify-content-end">{{ $stores->links() }}</ul>
 
 <a class="btn btn-primary" href="{{ route('admin.stores.create', ['store'=>$store->id]) }}" role="button">Criar Loja</a>
 
