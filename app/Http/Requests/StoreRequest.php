@@ -26,8 +26,19 @@ class StoreRequest extends FormRequest
         return [
             'name'         => 'required',
             'description'  => 'required|min:10',
-            'phone'        => 'required|numeric',
-            'mobile_phone' => 'required|numeric',
+            'phone'        => 'required|digits_between:10,11',
+            'mobile_phone' => 'required|digits:11',
         ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => 'Este campo é obrigatório.',
+            'digits_between' => 'O campo deve ter no mínimo :min e no máximo :max caracteres',
+            'digits' => 'O campo deve ter :digits caracteres',
+            'min' => 'Campo deve ter no mínimo :min caracteres',
+    ];
+        
     }
 }
