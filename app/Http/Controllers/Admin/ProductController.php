@@ -68,6 +68,8 @@ class ProductController extends Controller
 
         $product->update($data);
 
+        $product->categories()->sync($data['categories']);
+
         flash('Produto atualizado com sucesso!')->success()->important();
 
         return redirect()->route('admin.products.index');
