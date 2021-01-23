@@ -18,31 +18,37 @@
 
     <div class="form-group">
         <label>Descrição</label>
-        <input class="form-control" type="text" name="description">
+        <input class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}" type="text" name="description">
+        @error('description')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
     </div>
 
     <div class="form-group">
         <label>Conteúdo</label>
-        <textarea class="form-control" name="body" cols="30" rows="10"></textarea>
+        <textarea class="form-control @error('body') is-invalid @enderror" name="body" cols="30" rows="10">{{ old('body') }}</textarea>
+        @error('body')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
     </div>
 
     <div class="form-group">
         <label>Preço</label>
-        <input class="form-control" type="text" name="price">
+        <input class="form-control @error('price') is-invalid @enderror" value="{{ old('description') }}" type="text" name="price">
+        @error('price')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
     </div>
 
     <div class="form-group">
         <label>Slug</label>
         <input class="form-control" type="text" name="slug">
-    </div>
-
-    <div class="form-group">
-        <label>Loja</label>
-        <select class="form-control" name="store">
-            @foreach ($stores as $s)
-            <option value="{{ $s->id }}">{{ $s->name }}</option>
-            @endforeach
-        </select>
     </div>
 
     <button type="submit" class="btn btn-success btn-lg">Criar Produto</button>

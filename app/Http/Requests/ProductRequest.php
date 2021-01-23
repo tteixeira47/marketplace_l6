@@ -26,9 +26,8 @@ class ProductRequest extends FormRequest
         return [
             'name'         => 'required',
             'description'  => 'required|min:10',
-            'body'         => 'required|min:10',
-            'phone'        => 'required|digits_between:10,11',
-            'mobile_phone' => 'required|digits:11',
+            'body'         => 'required|min:30',
+            'price'        => 'required|numeric',
         ];
     }
 
@@ -38,8 +37,6 @@ class ProductRequest extends FormRequest
         return [
             'required'       => 'Este campo é obrigatório.',
             'numeric'        => 'O campo deve ser numérico.',
-            'digits_between' => 'O campo deve ter no mínimo :min e no máximo :max dígitos (números).',
-            'digits'         => 'O campo deve ter :digits dígitos (números).',
             'min'            => 'Campo deve ter no mínimo :min caracteres.',
         ];
     }
