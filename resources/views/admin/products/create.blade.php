@@ -18,7 +18,8 @@
 
     <div class="form-group">
         <label>Descrição</label>
-        <input class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}" type="text" name="description">
+        <input class="form-control @error('description') is-invalid @enderror" value="{{ old('description') }}"
+            type="text" name="description">
         @error('description')
         <div class="invalid-feedback">
             {{ $message }}
@@ -28,7 +29,7 @@
 
     <div class="form-group">
         <label>Conteúdo</label>
-        <textarea class="form-control @error('body') is-invalid @enderror" name="body" cols="30" rows="10">{{ old('body') }}</textarea>
+        <textarea class="form-control @error('body') is-invalid @enderror" name="body">{{ old('body') }}</textarea>
         @error('body')
         <div class="invalid-feedback">
             {{ $message }}
@@ -38,7 +39,8 @@
 
     <div class="form-group">
         <label>Preço</label>
-        <input class="form-control @error('price') is-invalid @enderror" value="{{ old('description') }}" type="text" name="price">
+        <input class="form-control @error('price') is-invalid @enderror" value="{{ old('price') }}" type="text"
+            name="price">
         @error('price')
         <div class="invalid-feedback">
             {{ $message }}
