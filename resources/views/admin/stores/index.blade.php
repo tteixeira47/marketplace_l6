@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+
+@if ($store)
 <table class="table table-striped">
     <thead>
         <tr>
@@ -42,8 +44,16 @@
     </tbody>
 </table>
 
-@if (!$store)
-<a class="btn btn-primary" href="{{ route('admin.stores.create', ['store'=>$store->id]) }}" role="button">Criar Loja</a>
+@else
+
+<div class="container mt-5">
+    <div class="row justify-content-md-center">
+        <div class="col-md-auto">
+            <a class="btn btn-primary" href="{{ route('admin.stores.create') }}" role="button">Criar Loja</a>
+        </div>
+    </div>
+</div>
+
 @endif
 
 @endsection
