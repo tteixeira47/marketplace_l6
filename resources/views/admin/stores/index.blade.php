@@ -6,6 +6,7 @@
         <tr>
             <th>Opções</th>
             <th>Loja</th>
+            <th>Total de Produtos</th>
             <th>ID</th>
         </tr>
     </thead>
@@ -35,6 +36,7 @@
                 </div>
             </td>
             <td>{{ $store->name }}</td> {{--Print do Blade pro Id da loja--}}
+            <td>{{ $store->products->count() }}</td> {{-- Exibir quantidade de produtos da loja --}}
             <td>{{ $store->id }}</td> {{--Print do Blade pro Id da loja--}}
         </tr>
     </tbody>

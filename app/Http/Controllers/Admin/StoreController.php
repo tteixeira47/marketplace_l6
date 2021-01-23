@@ -13,7 +13,8 @@ class StoreController extends Controller
         $this->middleware('user.has.store')->only(['create','store']);
     }
 
-    public function index(){
+    public function index() 
+    {
         $store = auth()->user()->store;
 
         return view('admin.stores.index', compact('store'));
@@ -42,7 +43,7 @@ class StoreController extends Controller
 
     public function edit($store)
     {
-        $store = \App\Store::find($store);
+        $store = \App\Store::findOrFail($store);
 
         return view('admin.stores.edit', compact('store'));
     }
