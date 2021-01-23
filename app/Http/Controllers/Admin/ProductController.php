@@ -30,7 +30,7 @@ class ProductController extends Controller
         return view('admin.products.create', compact('stores'));
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest $request)
     {
         $data = $request->all();
 
@@ -55,7 +55,7 @@ class ProductController extends Controller
         return view('admin.products.edit', compact('product'));
     }
 
-    public function update(Request $request, $product)
+    public function update(ProductRequest $request, $product)
     {
         $data = $request->all();
 

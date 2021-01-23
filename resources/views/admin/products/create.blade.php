@@ -7,7 +7,13 @@
 
     <div class="form-group">
         <label>Nome Produto</label>
-        <input class="form-control" type="text" name="name">
+        <input class="form-control @error('name') is-invalid @enderror" value="{{ old('name') }}" type="text"
+            name="name">
+        @error('name')
+        <div class="invalid-feedback">
+            {{ $message }}
+        </div>
+        @enderror
     </div>
 
     <div class="form-group">
