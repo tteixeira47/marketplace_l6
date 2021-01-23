@@ -35,9 +35,10 @@ class StoreRequest extends FormRequest
     {
         return [
             'required' => 'Este campo é obrigatório.',
-            'digits_between' => 'O campo deve ter no mínimo :min e no máximo :max caracteres',
-            'digits' => 'O campo deve ter :digits caracteres',
-            'min' => 'Campo deve ter no mínimo :min caracteres',
+            'numeric' => 'O campo deve ser numérico.',
+            'digits_between' => 'O campo deve ter no mínimo :min e no máximo :max dígitos (números).',
+            'digits' => 'O campo deve ter :digits dígitos (números).',
+            'min' => 'Campo deve ter no mínimo :min caracteres.',
     ];
         
     }
