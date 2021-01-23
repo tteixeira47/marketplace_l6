@@ -41,6 +41,6 @@ class ProductRequest extends FormRequest
             'digits_between' => 'O campo deve ter no mínimo :min e no máximo :max dígitos (números).',
             'digits'         => 'O campo deve ter :digits dígitos (números).',
             'min'            => 'Campo deve ter no mínimo :min caracteres.',
-        ]
+        ];
     }
 }
