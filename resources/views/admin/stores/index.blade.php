@@ -40,6 +40,8 @@
     </tbody>
 </table>
 
+@if (!$store)
 <a class="btn btn-primary" href="{{ route('admin.stores.create', ['store'=>$store->id]) }}" role="button">Criar Loja</a>
+@endif
 
 @endsection

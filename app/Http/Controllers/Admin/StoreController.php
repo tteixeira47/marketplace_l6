@@ -8,14 +8,19 @@ use App\Http\Requests\StoreRequest;
 
 class StoreController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('user.has.store')->only(['create','store']);
+    }
+
     public function index(){
-    $store = auth()->user()->store;
+        $store = auth()->user()->store;
 
         return view('admin.stores.index', compact('store'));
     }
 
     public function create()
-    {
+    { 
         $users = \App\User::all(['id', 'name']);
 
         return view('admin.stores.create', compact('users'));;
@@ -30,6 +35,7 @@ class StoreController extends Controller
         $store = $user->store()->create($data); // Executa um create store com os dados do form
 
         flash('Loja ('. $store->name.  ') criada com sucesso!')->success()->important();
+        
         
         return redirect()->route('admin.stores.index');
     }
