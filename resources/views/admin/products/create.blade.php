@@ -57,12 +57,6 @@
         </select>
     </div>
 
-
-    <div class="form-group">
-        <label>Slug</label>
-        <input class="form-control" type="text" name="slug">
-    </div>
-
     <button type="submit" class="btn btn-success btn-lg">Criar Produto</button>
 
 </form>
