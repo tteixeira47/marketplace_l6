@@ -43,11 +43,13 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
+        $categories = $request->get('categories', null);
+
         $store = auth()->user()->store;
 
         $product = $store->products()->create($data);
 
-        $product->categories()->sync($data['categories']);
+        $product->categories()->sync($categories);
 
         flash('Produto criado com sucesso!')->success()->important();
 
@@ -72,11 +74,15 @@ class ProductController extends Controller
     {
         $data = $request->all();
 
+        $categories = $request->get('categories', null);
+
         $product = $this->product->find($product);
 
         $product->update($data);
 
-        $product->categories()->sync($data['categories']);
+        if (!is_null($categories)) {
+            $product->categories()->sync($categories); 
+        }
 
         flash('Produto atualizado com sucesso!')->success()->important();
 
