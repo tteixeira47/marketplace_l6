@@ -29,7 +29,7 @@ class CategoryController extends Controller
         return view('admin.categories.create');    
     }
 
-    public function store(Request $request)
+    public function store(CategoryRequest $request)
     {
         $data = $request->all();
 
@@ -62,12 +62,12 @@ class CategoryController extends Controller
         return redirect()->route('admin.categories.index');
     }
 
-    public function destroy($id)
+    public function destroy($category)
     {
         $category = $this->category->find($category);
 	    $category->delete();
 
-	    flash('Categoria Removida com Sucesso!')->success();
+	    flash('Categoria removida com sucesso.')->success()->important();
 	    return redirect()->route('admin.categories.index');
     }
 }

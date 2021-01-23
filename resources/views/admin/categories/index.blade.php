@@ -6,7 +6,7 @@
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>Ações</th>
+            <th>Opções</th>
             <th>Nome</th>
             <th>ID</th>
         </tr>
@@ -46,6 +46,6 @@
     </tbody>
 </table>
 
-<a class="btn btn-primary" href="{{ route('admin.categories.create') }}" role="button">Criar Produto</a>
+<a class="btn btn-primary" href="{{ route('admin.categories.create') }}" role="button">Criar Categoria</a>
 
 @endsection
