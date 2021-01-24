@@ -29,7 +29,7 @@
 
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item @if(request()->is('/')) active @endif">
-                    <a class="nav-link" href="{{route('home')}}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{route('cart.index')}}">Carrinho <span class="sr-only">(current)</span></a>
                 </li>
             </ul>
 
